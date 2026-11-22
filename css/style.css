@@ -1,0 +1,465 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  font-family: "poppins", sans-serif;
+  background-color: #fae0c6;
+  color: #ffff;
+  min-height: 100vh;
+}
+.html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+#hamburger-menu {
+  display: none;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: rgba(255, 169, 169, 0.8);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.navbar .navbar-logo {
+  margin-right: auto;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.navbar .navbar-logo span {
+  color: var(--primary);
+  font-style: italic;
+}
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+/* Hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-bg.jpeg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero .content {
+  padding: 2rem 10%;
+  max-width: 60rem;
+}
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+.hero .content h1 span {
+  color: var(--primary);
+}
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+/* About Section */
+.about-html {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+  padding: 25px 20px 30px;
+  text-align: center;
+}
+.about-html h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.about-html .row {
+  height: auto;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.about-html .row .content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 45px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.about-html .row .content p {
+  max-width: none;
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: justify;
+  text-indent: 2em;
+  box-sizing: border-box;
+  font-weight: bold;
+  color: var(--primary);
+}
+/* HOME: halaman tidak bisa di-scroll */
+html:has(body.home-page),
+body.home-page {
+  height: 100vh;
+  overflow: hidden;
+}
+/* TENTANG KAMI: halaman bisa di-scroll */
+html:has(body.about-page) {
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+body.about-page {
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/* menu section */
+.menu-html h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 3rem;
+}
+.menu-html p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+.menu-html h2 span {
+  color: var(--primary);
+}
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  padding: 30px 8%;
+}
+.menu-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 20px;
+  align-items: center;
+  background: rgba(255, 169, 169, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+.menu-card-img {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  width: 160px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.menu-card-title {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 30px;
+  margin: 20px;
+  color: #b17f4d;
+  font-weight: bold;
+}
+.menu-card-price {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 23px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.menu-card-desc {
+  grid-column: 2;
+  grid-row: 3;
+  font-size: 10px;
+  line-height: 1.6;
+  color: rgb(213, 114, 43);
+  margin-top: 8px;
+}
+
+/* ===== Contact Section ===== */
+.contact-html {
+  padding: 100px 8%;
+}
+.contact-html h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+/* KOTAK UTAMA */
+.location-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px;
+  align-items: stretch;
+  width: 100%;
+}
+/* GAMBAR MAPS */
+.map-container {
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.map-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* INFORMASI KANAN */
+.location-info {
+  background: rgba(255, 169, 169, 0.8);
+  padding: 35px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+.contact-html h2 {
+  font-size: 3rem;
+}
+.contact-html h2 span {
+  color: var(--primary);
+}
+.location-info h3 {
+  color: #c69c75;
+  font-size: 28px;
+  margin: 0 0 5px;
+}
+/* IKON DAN TULISAN */
+.info-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+.info-item i {
+  color: #c69c75;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.info-item strong {
+  display: block;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+.info-item p {
+  color: #b17f4d;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: bold;
+}
+/* TOMBOL */
+.btn-maps,
+.btn-grab {
+  display: block;
+  text-align: center;
+  padding: 13px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0;
+}
+.btn-maps {
+  background: #c69c75;
+  color: white;
+}
+.btn-grab {
+  background: #186039;
+  color: white;
+}
+.btn-maps:hover,
+.btn-grab:hover {
+  opacity: 0.85;
+}
+
+/* CREATED BY - FLOATING */
+.creator-floating {
+  position: fixed;
+  bottom: 12px;
+  right: 20px;
+  z-index: 9999;
+
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+
+  background: rgba(17, 17, 17, 0.85);
+  padding: 8px 14px;
+  border-radius: 20px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.creator-floating span {
+  color: #c69c75;
+  font-weight: bold;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.about-html {
+  padding-top: 8rem;
+}
+.menu-html {
+  padding-top: 8rem;
+}
+.contact-html {
+  padding-top: 8rem;
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+  .map-container {
+    height: 550px;
+  }
+}
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  .map-container {
+    height: 450px;
+  }
+}
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+  .menu-html .row {
+    grid-template-columns: 1fr;
+  }
+  .menu-html .menu-card {
+    flex: 0 0 140px;
+  }
+  .menu-html .menu-card img {
+    width: 130px;
+    height: 130px;
+  }
+  #hamburger-menu {
+    display: inline-block;
+    position: relative;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    pointer-events: auto;
+  }
+  .navbar .navbar-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: #fae0c6;
+    width: 30rem;
+    height: 100vh;
+    height: 100dvh;
+    padding-top: 6rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    pad: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+}
