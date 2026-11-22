@@ -352,7 +352,7 @@ body.about-page {
 
 /* CREATED BY - FLOATING */
 .creator-floating {
-  position: absolute;
+  position: fixed;
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
